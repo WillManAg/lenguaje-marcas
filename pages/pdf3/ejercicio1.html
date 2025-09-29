@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Tablas</title>
+</head>
+<body>
+
+    <h2>
+        <black>Ejercicio 1. </black>El siguiente código muestra un horario escolar incompleto (muestra de lunes a jueves).
+Cópialo y modifícalo para que el horario incluya las asignaturas del viernes, tal y como se muestra a
+continuación:
+    </h2>
+    <hr />
+
+    <h1>Horario escolar</h1>
+    <table border="1">
+    <tr>
+        <td>8-10</td>
+        <td>Mates</td>
+        <td>Compu</td>
+        <td>Mate</td>
+        <td>Lengua</td>
+        <td>Lengua</td>
+    </tr>
+    <tr>
+        <td>10-12</td>
+        <td>Geografía</td>
+        <td>Historia</td>
+        <td>Geografía</td>
+        <td>Lengua</td>
+        <td>Geografía</td>
+    </tr>
+    <tr>
+    <td>12-14</td>
+    <td>Física</td>
+    <td>Inglés</td>
+    <td>Física</td>
+    <td>Inglés</td>
+    <td>Física</td>
+    </tr>
+    <tr>
+        <td>15-17</td>
+        <td>Anatomía</td>
+        <td>Karate</td>
+        <td>Karate</td>
+        <td>Karate</td>
+        <td>Música</td>
+    </tr>
+    </table>
+
+
+    
+    <h2>
+        <black>Ejercicio 2. </black>Partiendo del ejercicio anterior, modifica la tabla para que muestre apropiadamente un
+encabezado donde se indique a qué corresponde cada columna. La salida debe ser similar a la
+siguiente:
+    </h2>
+    <hr />
+
+    <table border="1">
+    <tr>
+        <th>Horario</th>
+        <th>Lunes</th>
+        <th>Martes</th>
+        <th>Miércoles</th>
+        <th>Jueves</th>
+        <th>Viernes</th>
+    <tr>
+        <td>8-10</td>
+        <td>Mates</td>
+        <td>Compu</td>
+        <td>Mate</td>
+        <td>Lengua</td>
+        <td>Lengua</td>
+    </tr>
+    <tr>
+        <td>10-12</td>
+        <td>Geografía</td>
+        <td>Historia</td>
+        <td>Geografía</td>
+        <td>Lengua</td>
+        <td>Geografía</td>
+    </tr>
+    <tr>
+    <td>12-14</td>
+    <td>Física</td>
+    <td>Inglés</td>
+    <td>Física</td>
+    <td>Inglés</td>
+    <td>Física</td>
+    </tr>
+    <tr>
+        <td>15-17</td>
+        <td>Anatomía</td>
+        <td>Karate</td>
+        <td>Karate</td>
+        <td>Karate</td>
+        <td>Música</td>
+    </tr>
+    </table>
+
+    <h2>
+        <black>Ejercicio 3. </black>Si te fijas atentamente, las dos primeras materias del jueves son “Lengua”. Igualmente,
+la última materia de martes a jueves es “Kárate”. Modifica estas celdas de forma que aparezcan como
+una sola, de forma que la tabla se vea así:
+    </h2>
+
+    <hr />
+
+    <table border="1">
+    <tr>
+        <th>Horario</th>
+        <th>Lunes</th>
+        <th>Martes</th>
+        <th>Miércoles</th>
+        <th>Jueves</th>
+        <th>Viernes</th>
+    <tr>
+        <td>8-10</td>
+        <td>Mates</td>
+        <td>Compu</td>
+        <td>Mate</td>
+        <td rowspan="2">Lengua</td>
+        <td>Lengua</td>
+    </tr>
+    <tr>
+        <td>10-12</td>
+        <td>Geografía</td>
+        <td>Historia</td>
+        <td>Geografía</td>
+        <td>Geografía</td>
+    </tr>
+    <tr>
+        <td>12-14</td>
+        <td>Física</td>
+        <td>Inglés</td>
+        <td>Física</td>
+        <td>Inglés</td>
+        <td>Física</td>
+    </tr>
+    <tr>
+        <td>15-17</td>
+        <td>Anatomía</td>
+        <td colspan="3">Karate</td>
+        <td>Música</td>
+    </tr>
+    </table>
+
+
+    <h2>
+        <black>Ejercicio 4. </black>Genera el código necesario para crear la siguiente página. Utiliza la etiqueta caption:
+    </h2>
+
+    <hr />
+
+    <table border="1">
+        <caption> TABLA AVANZADA 1</caption>
+        <tr>
+            <th colspan="7">FEBRERO 2021</th>
+        </tr>
+        <tr>
+            <th>Lun</th>
+            <th>Mar</th>
+            <th>Mié</th>
+            <th>Jue</th>
+            <th>Vie</th>
+            <th>Sáb</th>
+            <th>Dom</th>
+        </tr>
+        <tr></tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+        </tr>
+    </table>
+    <h2>
+        <black>Ejercicio 5. </black>Recrea el horario real de clase.
+    </h2>
+
+    <hr />
+
+    <table border="1">
+        <caption> HORARIO D1ADA1 </caption>
+        <tr>
+            <th></th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miércoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+        </tr>
+        <tr>
+            <th>8:20 - 9:15</th>
+            <td rowspan="2">Sistemas Informáticos</td>
+            <td rowspan="3">Programación</td>
+            <td rowspan="2">Entorno de desarrollo</td>
+            <td rowspan="2">Base de datos</td>
+            <td rowspan="2">IPE</td>
+        </tr>
+        <tr>
+            <th>9:15 - 10:10</th>
+        </tr>
+        <tr>
+            <th>10:10 - 11:05</th>
+            <td>Programación</td>
+            <td>Programación</td>
+            <td>Sistemas Informáticos</td>
+            <td>Lenguaje de marcas y SGI</td>
+        </tr>
+        <tr>
+            <th>11:05 - 11:30</th>
+            <td colspan="5">RECREO</td>
+        </tr>
+        <tr>
+            <th>11:30 - 12:25</th>
+            <td>Lenguaje de marcas y SGI</td>
+            <td>IPE</td>
+            <td>Programación</td>
+            <td>Sistemas Informáticos</td>
+            <td>Lenguaje de marcas y SGI</td>
+        </tr>
+        <tr>
+            <th>12:25 - 13:20</th>
+            <td rowspan="2">Base de datos</td>
+            <td rowspan="2">Base de datos</td>
+            <td rowspan="2">Sistemas Informáticos</td>
+            <td rowspan="2">Programación</td>
+            <td rowspan="2">Programación</td>
+        </tr>
+        <tr>
+            <th>13:20 - 14:15</th>
+        </tr>
+
+    </table>
+
+</body>
+</html>

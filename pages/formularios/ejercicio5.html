@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="procesa.php" method="post">
+        Escriba su usuario:
+        <input type="text" name="usuario" size="11" maxlength="12">
+        <input type="submit" value="Enviar datos"> &nbsp;&nbsp;
+        <input type="reset" value="Borrar datos">
+
+        <br>
+
+        Contraseña: 
+        <input type="password" name="clave" size="10" maxlength="12">
+        <input type="submit" value="Enviar datos"> &nbsp;&nbsp;
+        <input type="reset" value="Borrar datos">
+
+        <br>
+
+        ¿Cómo contactó con nosotros?
+    
+        <select name="Contacto">
+            <option value=”casualidad”>Por casualidad </option>
+            <option value=”periodico”>Por el periódico </option>
+            <option value=”buscadores”>En los buscadores </option>
+            <option value=”comentario”>Me lo comentaron </option>
+        </select >
+
+        <br>
+
+        Checkbox
+
+        <input type="checkbox" name="Lista"> Sí, deseo recibir información acerca de sus productos.
+
+        <br>
+        
+        ¿Cuál es su sistema operativo preferido?
+        <br/>
+        <input type ="radio" name="SistemaOperativo" value="Mac">Mac OS
+        <input type ="radio" name="SistemaOperativo" value="Unix">Unix
+        <input type="radio" name="SistemaOperativo" value="NT" checked>Windows
+
+
+    </form>
+
+
+    
+</body>
+</html>

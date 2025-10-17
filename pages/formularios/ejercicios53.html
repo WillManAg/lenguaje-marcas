@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Ejercicio 5.3</title>
+</head>
+<body>
+    <h2>Ficha de datos</h2>
+
+    <form action="procesa.php" method="post">
+
+        <fieldset>
+            <legend>TOMA DE DATOS</legend>
+        <table>
+
+            <tr>
+                <td>Nombre:</td>
+                <td><input type="text" name="nombre" size="30" maxlength="30"></td>
+            </tr>
+            <tr>
+                <td>Primer Apellido:</td>
+                <td><input type="text" name="apellido1" size="30" maxlength="30"></td>
+            </tr>
+            <tr>
+                <td>Segundo Apellido:</td>
+                <td><input type="text" name="apellido2" size="30" maxlength="30"></td>
+            </tr>
+            <tr>
+                <td>Domicilio:</td>
+                <td><input type="text" name="domicilio" size="60" maxlength="60"></td>
+            </tr>
+            <tr>
+                <td>Heavy metal:</td>
+                <td>Me gusta: <input type="radio" name="megusta">  Es mi vida: <input type="radio" name="meencanta"></td>
+            </tr>
+            <tr>
+                <td>Series favoritas:</td>
+                <td>
+                    A dos metros bajo tierra: <input type="checkbox" name="series1"> Futurama: <input type="checkbox" name="series2"> Los informáticos: <input type="checkbox" name="series3">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="ENVIAR DATOS">
+                </td>
+                <td>
+                    <input type="reset" value="BORRAR DATOS">
+                </td>
+            </tr>
+
+
+        </fieldset>
+
+        </table>
+
+</body>
+</html>

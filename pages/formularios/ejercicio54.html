@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Ejercicio 5.4</title>
+</head>
+<body>
+    <h1>Productos Mexicanos de Limpieza "PROLIM"</h1>
+
+    <form action="procesa.php" method="post">
+        Entrada (elija sólo una linea de productos):
+        <br>
+
+        <select name="productos">
+            <option value="ninguna">Ninguna</option>
+            <option value="cocina">Cocina</option>
+            <option value="lavanderia">Lavandería</option>
+            <option value="habitat">Hábitat</option>
+            <option value="albercas">Albercas</option>
+            <option value="industrial">Industrial</option>
+        </select>
+
+        <br>
+
+        Segundo (puede elegir más de un producto):
+        <br>
+        <select name="extras" size="4" multiple>
+            <option value="ninguno">Ninguno</option>
+            <option value="tergen">Tergen (Detergente lavaloza neutro uso manual)</option>
+            <option value="spotless">Spotless (Detergente líquido para máquina lavaloza)</option>
+            <option value="track">Track (Pasta Multiusos)</option>
+        </select>
+        <br>
+
+        Cocina (elija sólo un producto):
+        <br>
+        <select name="cocina">
+            <option value="ninguno">Ninguno</option>
+            <option value="tergen">Tergen (Detergente lavaloza neutro uso manual)</option>
+            <option value="spotless">Spotless (Detergente líquido para máquina lavaloza)</option>
+        </select>
+    </form>
+
+</body>
+</html>

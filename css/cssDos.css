@@ -8,7 +8,7 @@
 }
 
 .ej1 .marco p {
-  font-family: Verdana, sans-serif;                
+  font-family: Verdana;                
   margin-bottom: 30px;         
 }
 
@@ -22,10 +22,9 @@
 
 .ej1 .contenedor p {
   
-  all: revert;
-  font-family: Verdana, sans-serif;
-  color: yellow;
-  margin: 0;                      
+    all: revert;
+    font-family: Verdana;
+    color: yellow;                   
 }
 
 /* EJERCICIO 2 */
@@ -36,33 +35,42 @@
 }
 
 .ej2 .lienzo {
-  width: min(900px, 90%);
-  margin: 0 auto;
+  width: 600px;
+  margin: auto;
   border: 3px dotted green;
-  padding: 40px 30px;
+  padding: 40px 40px;
 }
 
 .ej2 h1 {
   font-family: Georgia, serif;
-  font-size: 2rem;
-  margin: 24px 0 12px;
+  font-size: 1.5rem;
 }
 
 .ej2 p {
   font-family: Arial, sans-serif;
   font-size: 16px;
-  margin: 0 0 22px;
-  color: #111;
+  color: black;
 }
 
 .ej2 .especial {
   background: blue;               
-  border: 4px solid limegreen;
+  border: 3px solid limegreen;
   padding: 8px 12px;
-  width: 65%;
-  margin: 10px 0 26px 40px;       
+  
 }
 
 /* EJERCICIO 3 */
 
+.ej3 .lienzo {
+    background-image: url("../img/puppy.jpg");
+	background-repeat: repeat-y;
+	background-position: top left;
+    width: 500px;
+    margin: auto;
+    border: 2px dotted black;
+}
 
+.ej3 p {
+    text-transform: uppercase;
+	letter-spacing: 5px;
+}

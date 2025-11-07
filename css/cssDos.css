@@ -1,0 +1,68 @@
+
+/*  EJERCICIO 1 */
+.ej1 .marco {
+  border: 2px dashed black;
+  width: 380px;
+  padding-left: 5px;
+  margin: 20px;               
+}
+
+.ej1 .marco p {
+  font-family: Verdana, sans-serif;                
+  margin-bottom: 30px;         
+}
+
+.ej1 .contenedor {
+  margin: 30px;
+  padding: 25px;
+  background: green;
+  border: 4px double orange;
+  width: 250px;
+}
+
+.ej1 .contenedor p {
+  
+  all: revert;
+  font-family: Verdana, sans-serif;
+  color: yellow;
+  margin: 0;                      
+}
+
+/* EJERCICIO 2 */
+.ej2 {
+
+  background: pink;
+  padding: 30px 0;
+}
+
+.ej2 .lienzo {
+  width: min(900px, 90%);
+  margin: 0 auto;
+  border: 3px dotted green;
+  padding: 40px 30px;
+}
+
+.ej2 h1 {
+  font-family: Georgia, serif;
+  font-size: 2rem;
+  margin: 24px 0 12px;
+}
+
+.ej2 p {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin: 0 0 22px;
+  color: #111;
+}
+
+.ej2 .especial {
+  background: blue;               
+  border: 4px solid limegreen;
+  padding: 8px 12px;
+  width: 65%;
+  margin: 10px 0 26px 40px;       
+}
+
+/* EJERCICIO 3 */
+
+

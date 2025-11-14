@@ -32,6 +32,7 @@
 
   background: pink;
   padding: 30px 0;
+  margin-bottom: 30px;
 }
 
 .ej2 .lienzo {
@@ -61,16 +62,73 @@
 
 /* EJERCICIO 3 */
 
-.ej3 .lienzo {
-    background-image: url("../img/puppy.jpg");
-	background-repeat: repeat-y;
-	background-position: top left;
-    width: 500px;
-    margin: auto;
-    border: 2px dotted black;
+.ej3 {
+  display: flex;
+  border: 2px dashed black;
+  height: 580px;
 }
 
-.ej3 p {
-    text-transform: uppercase;
+.ej3 .lienzo {
+    background-image: url("../img/puppy.jpg");
+	  background-repeat: repeat-y;
+	  background-position: top left;
+    width: 200px;
+    min-height: 100%;
+}
+
+.ej3 .texto {
+  flex: 1;
+  padding: 20px;
+  text-transform: uppercase;
 	letter-spacing: 5px;
 }
+
+.ej3 .texto h1 {
+    text-transform: none;   
+    letter-spacing: normal; 
+    font-size: 2rem;
+    margin-top: 0;        
+}
+
+/* EJERCICIO 4 */
+
+.ej4 {
+  border: 2px dashed black;
+  padding: 3px 10px 3px 10px;
+  width: 600px;
+  margin-top: 30px;
+}
+
+.ej4 .contenedor {
+  border: 2px solid blue;
+  background-color: yellow;
+  padding: 10px 20px 40px 30px;
+  margin: 0px;
+}
+
+.ej4 .contenedor p {
+  border-left : 3px solid red;
+  border-right : 3px solid red;
+  background-color: blue;
+  color: white;
+  margin-bottom: 5px;
+}
+
+/* EJERCICIO 5 */
+.secundario {
+  border: 4px dotted green;
+  background-color: orange;
+  padding: 25px 15px 15px 5px;
+  margin: 20px 20px 5px 20px;
+}
+
+.secundario p {
+  border-left : 3px solid red;
+  border-right : 3px solid red;
+  background-color: blue;
+  color: white;
+  margin-bottom: 5px;
+}
+
+
+

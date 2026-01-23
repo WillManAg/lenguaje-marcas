@@ -12,12 +12,12 @@
             <precio currency="EUR">12.50</precio>
         </producto>
         
-        <producto cantidad="1">
+        <producto cantidad="2">
             <nombre>Patatas Fritas Grandes</nombre>
             <precio currency="EUR">3.50</precio>
         </producto>
         
-        <producto cantidad="1">
+        <producto cantidad="2">
             <nombre>Refresco de Cola</nombre>
             <precio currency="EUR">2.00</precio>
         </producto>
@@ -25,3 +25,22 @@
     </productos>
 
 </pedido_uber_eats>
+
+<paises>
+
+    <pais continente="Asia">
+        <nombre_pais>India</nombre_pais>
+        <capital>Nueva Delhi</capital>
+    </pais>
+
+    <pais continente="Europa">
+        <nombre_pais>Portugal</nombre_pais>
+        <capital>Lisboa</capital>
+    </pais>
+
+    <pais continente="África">
+        <nombre_pais>Egipto</nombre_pais>
+        <capital>El Cairo</capital>
+    </pais>
+
+</paises>

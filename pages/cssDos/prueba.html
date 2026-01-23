@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inmortal Hookah | Premium Lounge</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Manrope:wght@300;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #050505;
+            --glass-bg: rgba(20, 20, 20, 0.65);
+            --gold: #d4af37;
+            --gold-light: #f9d976;
+            --gold-dark: #aa8620;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --border-width: 1px;
+            --transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Manrope', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* --- BACKGROUND CANVAS (HUMO Y BRASAS) --- */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        /* --- TIPOGRAFÍA & UTILIDADES --- */
+        h1, h2, h3, h4 {
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gold);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .gold-text {
+            background: linear-gradient(45deg, var(--gold), var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        /* --- ESTILO ARÁABE GEOMÉTRICO (BORDES) --- */
+        /* Creamos un borde octogonal recortado simulando arquitectura árabe */
+        .arabic-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 2rem;
+            position: relative;
+            /* Recorte de esquinas */
+            clip-path: polygon(
+                10% 0, 90% 0, 100% 10%, 100% 90%, 
+                90% 100%, 10% 100%, 0 90%, 0 10%
+            );
+            transition: var(--transition);
+        }
+
+        .arabic-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+        }
+
+        /* Elemento decorativo de borde interno */
+        .arabic-card::before {
+            content: '';
+            position: absolute;
+            top: 5px; left: 5px; right: 5px; bottom: 5px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            clip-path: polygon(
+                10% 0, 90% 0, 100% 10%, 100% 90%, 
+                90% 100%, 10% 100%, 0 90%, 0 10%
+            );
+            pointer-events: none;
+        }
+
+        /* --- BOTONES PREMIUM --- */
+        .btn-gold {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+            /* Forma geométrica sutil */
+            clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+        }
+
+        .btn-gold:hover {
+            background: var(--gold);
+            color: #000;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* --- NAVEGACIÓN --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 2rem 0;
+            z-index: 100;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+        }
+
+        .menu-link {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: 0.3s;
+        }
+
+        .menu-link:hover {
+            color: var(--gold);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeUp 1s ease-out forwards 0.5s;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            animation: fadeUp 1s ease-out forwards 0.8s;
+        }
+
+        .hero-btn-wrapper {
+            opacity: 0;
+            animation: fadeUp 1s ease-out forwards 1.1s;
+        }
+
+        /* --- SECCIONES GENÉRICAS --- */
+        section {
+            padding: 8rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+            margin: 1rem auto 0;
+        }
+
+        /* --- GRID DE ESPACIOS/PRODUCTOS --- */
+        .grid-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            /* Filtro oscuro para unificar tonos */
+            filter: grayscale(40%) brightness(0.8);
+            transition: var(--transition);
+            margin-bottom: 1rem;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%);
+        }
+
+        .arabic-card:hover .card-img {
+            filter: grayscale(0%) brightness(1);
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* --- MENU FLOTANTE (CTA IMPORTANTE) --- */
+        .floating-menu-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--gold);
+            color: #000;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            z-index: 999;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid #fff;
+        }
+
+        .floating-menu-btn:hover {
+            transform: scale(1.1) rotate(90deg);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 4rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* --- ANIMACIONES --- */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .nav-content { flex-direction: column; gap: 1rem; }
+            .menu-link { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <nav>
+        <div class="container nav-content">
+            <div class="logo gold-text">INMORTAL HOOKAH</div>
+            <div class="nav-links">
+                <a href="#historia" class="menu-link">El Origen</a>
+                <a href="#espacios" class="menu-link">Espacios</a>
+                <a href="#carta" class="menu-link">La Carta</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1 class="gold-text">Tradición<br>Redefinida</h1>
+            <p>Donde la mística árabe se encuentra con el lujo contemporáneo. Experimenta la cachimba tradicional en un entorno diseñado para la inmortalidad.</p>
+            <div class="hero-btn-wrapper">
+                <a href="#carta" class="btn-gold">Ver Carta Digital</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="historia">
+        <div class="container">
+            <h2 class="section-title reveal">Nuestras Raíces</h2>
+            <div class="arabic-card reveal" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">
+                    Inspirado en los antiguos palacios de Oriente Medio, Inmortal Hookah nace para rescatar el ritual social de la Shisha y elevarlo a un estatus VIP.
+                </p>
+                <p style="color: var(--text-muted);">
+                    Nuestra arquitectura combina patrones geométricos sagrados con tecnología moderna, creando un santuario oscuro y dorado donde el tiempo se detiene. Cada rincón cuenta una historia de hospitalidad y exclusividad.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="espacios">
+        <div class="container">
+            <h2 class="section-title reveal">La Experiencia</h2>
+            
+            <div class="grid-gallery">
+                <div class="arabic-card reveal">
+                    <img src="https://images.unsplash.com/photo-1542849187-5ec6ea5e6a27?q=80&w=1000&auto=format&fit=crop" alt="Shisha Premium" class="card-img">
+                    <h3 class="card-title">Hookah Premium</h3>
+                    <p class="card-desc">Tabacos de reserva mundial y carbones naturales en bases de cristal de bohemia.</p>
+                </div>
+
+                <div class="arabic-card reveal">
+                    <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1000&auto=format&fit=crop" alt="Coctelería" class="card-img">
+                    <h3 class="card-title">Mixología de Autor</h3>
+                    <p class="card-desc">Fusiones exóticas de especias árabes con licores de alta gama.</p>
+                </div>
+
+                <div class="arabic-card reveal">
+                    <img src="https://images.unsplash.com/photo-1574621173232-a20d6f455985?q=80&w=1000&auto=format&fit=crop" alt="Lounge VIP" class="card-img">
+                    <h3 class="card-title">Zona VIP</h3>
+                    <p class="card-desc">Privados diseñados para la máxima discreción y confort.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="carta" style="text-align: center;">
+        <div class="container reveal">
+            <div class="arabic-card" style="border-color: var(--gold); background: rgba(212, 175, 55, 0.05);">
+                <h2 style="margin-bottom: 1rem;">¿Listo para la experiencia?</h2>
+                <p style="margin-bottom: 2rem;">Explora nuestra selección completa de sabores, tés y coctelería.</p>
+                <a href="#" class="btn-gold">Abrir Carta Completa</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="logo gold-text" style="margin-bottom: 1rem;">INMORTAL</div>
+            <p>Calle Lujo, 12, Madrid, España</p>
+            <p>Reservas: +34 600 000 000</p>
+            <div style="margin-top: 2rem; opacity: 0.5; font-size: 0.8rem;">
+                &copy; 2023 Inmortal Hookah Lounge. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <a href="#carta" class="floating-menu-btn" title="Ver Carta">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"></path><path d="M3 12h18"></path><path d="M3 18h18"></path></svg>
+    </a>
+
+    <script>
+        // --- 1. ANIMACIÓN DE SCROLL (REVEAL) ---
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+
+        // --- 2. SISTEMA DE PARTÍCULAS (HUMO/BRASAS) EN CANVAS ---
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        let particlesArray;
+
+        // Ajustar canvas al tamaño de ventana
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                // Movimiento lento hacia arriba (como humo/calor)
+                this.directionX = (Math.random() * 0.4) - 0.2;
+                this.directionY = (Math.random() * 0.5) - 0.7; // Sube lentamente
+                this.size = Math.random() * 2;
+                this.color = '#d4af37'; // Oro
+                this.opacity = Math.random() * 0.5;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.globalAlpha = this.opacity;
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                ctx.globalAlpha = 1; // Reset opacity
+            }
+
+            update() {
+                this.x += this.directionX;
+                this.y += this.directionY;
+
+                // Si sale de pantalla, reiniciar abajo
+                if (this.y < 0 || this.x > canvas.width || this.x < 0) {
+                    this.x = Math.random() * canvas.width;
+                    this.y = canvas.height + 10;
+                    this.opacity = Math.random() * 0.5;
+                }
+                this.draw();
+            }
+        }
+
+        function init() {
+            particlesArray = [];
+            let numberOfParticles = (canvas.height * canvas.width) / 9000; // Densidad
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, innerWidth, innerHeight); // Limpiar canvas
+            
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+            }
+        }
+
+        // Manejo de resize
+        window.addEventListener('resize', () => {
+            canvas.width = innerWidth;
+            canvas.height = innerHeight;
+            init();
+        });
+
+        init();
+        animate();
+    </script>
+</body>
+</html>

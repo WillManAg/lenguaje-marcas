@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pedido_uber_eats>
+    
+    <cliente>William Marin</cliente>
+    
+    <direccion>Fondo delecha, Madrid</direccion>
+    
+    <productos>
+        
+        <producto cantidad="2">
+            <nombre>Hamburguesa Doble Queso</nombre>
+            <precio currency="EUR">12.50</precio>
+        </producto>
+        
+        <producto cantidad="1">
+            <nombre>Patatas Fritas Grandes</nombre>
+            <precio currency="EUR">3.50</precio>
+        </producto>
+        
+        <producto cantidad="1">
+            <nombre>Refresco de Cola</nombre>
+            <precio currency="EUR">2.00</precio>
+        </producto>
+        
+    </productos>
+
+</pedido_uber_eats>

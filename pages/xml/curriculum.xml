@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<curriculum>
+
+     <nombre>William Marin</nombre>
+     <año_nacimiento>1993</año_nacimiento>
+    
+    <residencia>
+        <ciudad>Madrid</ciudad>
+        <pais>España</pais>
+    </residencia>
+
+    <datos_contacto>
+        <telefono>+34 555 555 555</telefono>
+        <email>sadfddfa@gmail.com</email>
+    </datos_contacto>
+
+    <redes>
+        <red_social plataforma="LinkedIn">https://www.linkedin.com/in/william-marin</red_social>
+        <red_social plataforma="GitHub">https://github.com/william-marin</red_social>   
+    </redes>
+
+    <descripcion_personal>
+        Hola, me gusta el Rust.
+    </descripcion_personal>
+
+    <experiencia_laboral>
+        <competencias>
+            <nombre_competencia>Picar sulfuro</nombre_competencia>
+            <nivel>Experto</nivel>
+        </competencias>
+        <competencias>
+            <nombre_competencia>Hacer la croqueta</nombre_competencia>
+            <nivel>Intermedio</nivel>
+        <competencias>
+    </experiencia_laboral>
+
+    <formacion_academica>
+        <titulo>Grado medio en Sistemas Microinformáticos y Redes</titulo>
+        <centro>IES Clara del Rey</centro>
+        <año_finalizacion>2025</año_finalizacion>
+    </formacion_academica>
+
+    <experiencia_laboral>
+        <puesto>Soporte Ténico de Nivel 1 y 2</puesto>
+        <empresa>Vocento</empresa>
+        <fecha_inicio>2025-05-01</fecha_inicio>
+        <fecha_fin>2026-09-30</fecha_fin>
+    </experiencia_laboral>
+
+</curriculum>

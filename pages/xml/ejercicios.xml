@@ -44,3 +44,31 @@
     </pais>
 
 </paises>
+
+<vuelos>
+
+    <billete cancelado="si">
+
+        <codigo_ruta>UK&lt;IT#85</codigo_ruta>
+        <pasajero>William Marin</pasajero>
+        <origen>Barajas</origen>
+        <destino>John F. Kennedy</destino>
+        <fecha>2026-07-20</fecha>
+        <pcr>NEGATIVO</pcr>
+        <hora_vuelo>20:30</hora_vuelo>
+
+    </billete>
+
+    <billete cancelado="no">
+
+        <codigo_ruta>US&lt;FR@12</codigo_ruta>
+        <pasajero>Ana Lopez</pasajero>
+        <origen>John F. Kennedy</origen>
+        <destino>Charles de Gaulle</destino>
+        <fecha>2026-08-15</fecha>
+        <pcr>POSITIVO</pcr>
+        <hora_vuelo>15:45</hora_vuelo>
+
+    </billete>
+
+</vuelos>
